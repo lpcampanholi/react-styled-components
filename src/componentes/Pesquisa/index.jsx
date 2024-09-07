@@ -12,11 +12,10 @@ const Campo = styled.input`
     font-weight: 400;
     color: #D9D9D9;
     background: transparent;
-    border: 2px solid;
+    border: 1px solid;
     border-color: #C98CF1;
     border-radius: 0.5em;
     box-sizing: border-box;
-
     &::placeholder {
       color: #D9D9D9;
     }
