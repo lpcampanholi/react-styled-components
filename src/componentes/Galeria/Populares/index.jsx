@@ -25,7 +25,7 @@ const Botao = styled.button`
   color: #d9d9d9;
   border: 1px solid #C98CF1;
   border-radius: 0.5em;
-  padding: 0.5em 1em;
+  padding: 1.2em 0.5em;
   margin-top: 1em;
   cursor: pointer;
 `;

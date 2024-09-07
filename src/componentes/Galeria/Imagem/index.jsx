@@ -2,7 +2,7 @@ import styled from "styled-components";
 import BotaoIcone from "../../BotaoIcone";
 
 const Figure = styled.figure`
-  width: ${props => props.$expandida? `50vw` : `22em`};
+  width: ${props => props.$expandida? `45vw` : `22em`};
   display: flex;
   flex-direction: column;
   max-width: 100%;
@@ -41,7 +41,9 @@ const Descricao = styled.h4`
   font-weight: 400;
 `;
 
-const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
+const Imagem = ({ foto, expandida = false, aoZoomSolicitado, aoAlternarFavorito }) => {
+
+  const iconeFavorito = foto.favorita ? "/icones/favorito-ativo.png" : "/icones/favorito.png";
 
   return (
     <Figure id={`foto-${foto.id}`} $expandida={expandida}>
@@ -50,10 +52,10 @@ const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
         <Titulo>{foto.titulo}</Titulo>
           <Rodape>
             <Descricao>{foto.fonte}</Descricao>
-            <BotaoIcone>
-              <img src="/icones/favorito.png" alt="ícone de favorito" />
+            <BotaoIcone onClick={() => aoAlternarFavorito(foto)}>
+              <img src={iconeFavorito} alt="ícone de favorito-ativo" />
             </BotaoIcone>
-            {!expandida &&
+             {!expandida &&
               <BotaoIcone
                 aria-hidden={expandida}
                 onClick={() => aoZoomSolicitado(foto)}>
