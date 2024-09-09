@@ -7,6 +7,7 @@ const Footer = styled.footer`
   justify-content: space-between;
   align-items: center;
   padding: 1em;
+  margin-top: 1em;
 `;
 
 const ContainerIcones = styled.div`

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Titulo from "../../Titulo";
+import fotos from "./fotos-populares.json";
 
 const SecaoPopulares = styled.section`
   display: flex;
@@ -30,12 +31,12 @@ const Botao = styled.button`
   cursor: pointer;
 `;
 
-const Populares = ({ fotos }) => {
+const Populares = () => {
   return (
     <SecaoPopulares>
       <Titulo $alinhamento={"left"}>Populares</Titulo>
       <ColunaFotos>
-          {fotos.slice(0, 5).map(foto => <Foto key={foto.id} src={foto.path} alt={foto.titulo}/>)}
+          {fotos.slice(0, 5).map(foto => <Foto key={foto.id} src={foto.path} alt={foto.alt}/>)}
       </ColunaFotos>
       <Botao>Ver mais</Botao>
     </SecaoPopulares>

@@ -50,7 +50,6 @@ const ModalZoom = ({ foto, aoFechar, aoAlternarFavorito }) => {
           </Dialog>
         </Overlay>
       </>}
-
     </>
   );
 };

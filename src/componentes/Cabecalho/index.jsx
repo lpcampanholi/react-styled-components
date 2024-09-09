@@ -11,11 +11,11 @@ const HeaderEstilizado = styled.header`
   }
 `;
 
-const Cabecalho = () => {
+const Cabecalho = ({ aoAtualizarPesquisa }) => {
   return (
     <HeaderEstilizado>
       <img src="imagens/logo.png" alt="Logo Space App" />
-      <Pesquisa />
+      <Pesquisa aoAtualizarPesquisa={aoAtualizarPesquisa} />
     </HeaderEstilizado>
   );
 };

@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { normalizeText } from "../../utils/utils";
 
-const ContainerEstilizado = styled.div`
+const Container = styled.div`
   display: inline-block;
   position: relative;
 `;
 
-const Campo = styled.input`
+const CampoTexto = styled.input`
     width: 30em;
     height: 3em;
     padding: 0.2em 0.8em;
@@ -27,13 +28,12 @@ const IconeLupa = styled.img`
   right: 10px;
 `;
 
-
-function Pesquisa() {
+const Pesquisa = ({ aoAtualizarPesquisa }) => {
   return (
-    <ContainerEstilizado>
-      <Campo type="text" name="pesquisa" id="pesquisa" placeholder="O que você procura?" />
+    <Container>
+      <CampoTexto type="text" name="pesquisa" id="pesquisa" placeholder="O que você procura?" onChange={(e) => aoAtualizarPesquisa(normalizeText(e.target.value))} />
       <IconeLupa src="icones/lupa.png" alt="ícone de lupa" />
-    </ContainerEstilizado>
+    </Container>
   )
 };
 

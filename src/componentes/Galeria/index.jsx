@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import Titulo from "../Titulo";
-import Tags from "./Tags";
 import Populares from "./Populares";
 import Imagem from "./Imagem";
 
-const GaleriaContainer = styled.div`
+const Container = styled.div`
   display: flex;
 `;
 
@@ -21,24 +20,21 @@ const ImagensContainer = styled.div`
 
 const Galeria = ({ fotos = [], aoSelecionado, aoAlternarFavorito }) => {
   return (
-    <>
-      <Tags />
-      <GaleriaContainer>
-        <SecaoFluida>
-          <Titulo>Navegue pela galeria</Titulo>
-          <ImagensContainer>
-            {fotos.map(foto =>
-            <Imagem
-              key={foto.id}
-              foto={foto}
-              aoZoomSolicitado={aoSelecionado}
-              aoAlternarFavorito={aoAlternarFavorito}
-            />)}
-          </ImagensContainer>
-        </SecaoFluida>
-        <Populares fotos={fotos} />
-      </GaleriaContainer>
-    </>
+    <Container>
+      <SecaoFluida>
+        <Titulo>Navegue pela galeria</Titulo>
+        <ImagensContainer>
+          {fotos.map(foto =>
+          <Imagem
+            key={foto.id}
+            foto={foto}
+            aoZoomSolicitado={aoSelecionado}
+            aoAlternarFavorito={aoAlternarFavorito}
+          />)}
+        </ImagensContainer>
+      </SecaoFluida>
+      <Populares />
+    </Container>
   );
 };
 
